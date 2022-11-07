@@ -85,6 +85,7 @@ export default function Home() {
               />
                <label className='text-white'>Password</label>
               <input
+                type='password'
                 placeholder='Password...'
                 onChange={(event) => {
                   setRegisterPassword(event.target.value)
@@ -150,7 +151,8 @@ export default function Home() {
                 className='flow-root m-2 p-2'
               />
               <label className='text-white'>Password</label>
-              <input 
+              <input
+                type='password' 
                 placeholder='Password'
                 onChange={(event) => {
                   setLoginPassword(event.target.value)
