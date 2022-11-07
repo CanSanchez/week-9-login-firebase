@@ -47,20 +47,6 @@ export default function Home() {
     }
   }
 
-  const login = async () => {
-    try {
-      const user =await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-      console.log(user)
-    } catch(err) {
-      console.log(err.message)
-    }
-  }
-
-  const logout = async () => {
-    await signOut(auth)
-    console.log('user logged out')
-  }
-
   const HandleSubmit = event => {
     console.log('submit');
     event.preventDefault();
@@ -72,10 +58,10 @@ export default function Home() {
       <h3 className="text-3xl text-sky-400 font-bold underline absolute top-0 p-4">Welcome to the app</h3>
       <div className="grid grid-cols-3 gap-4">
         <form onSubmit={HandleSubmit}>
-          <h2 className='text-white'>Register</h2>
-          <div className='border-2 p-4 m-2 rounded-lg'>
+          <h2>Register</h2>
+          <div className='border-2 p-2 m-2'>
             <div className='pb-4'>
-              <label className='text-white'>Email</label>
+              <label>Email</label>
               <input
                 placeholder='Email...'
                 onChange={(event) => {
@@ -83,7 +69,7 @@ export default function Home() {
                 }}
                 className='flow-root m-2 p-2'
               />
-               <label className='text-white'>Password</label>
+               <label>Password</label>
               <input
                 placeholder='Password...'
                 onChange={(event) => {
@@ -136,81 +122,6 @@ export default function Home() {
             </div>
           </div>
         </form>
-{/* Login Form */}
-        <form onSubmit={HandleSubmit}>
-          <h2 className='text-white'>Login</h2>
-          <div className='border-2 p-4 m-2 rounded-lg'>
-            <div className='pb-4'>
-              <label className='text-white'>Email</label>
-              <input 
-                placeholder='Email'
-                onChange={(event) => {
-                  setLoginEmail(event.target.value)
-                }}
-                className='flow-root m-2 p-2'
-              />
-              <label className='text-white'>Password</label>
-              <input 
-                placeholder='Password'
-                onChange={(event) => {
-                  setLoginPassword(event.target.value)
-                }}
-                className='flow-root m-2 p-2'
-              />
-            </div>
-            <button 
-                type='submit'
-                className=' text-red-700 
-                             hover:text-white border 
-                             border-red-700 
-                             hover:bg-red-800 
-                             focus:ring-4 
-                             focus:outline-none 
-                             focus:ring-red-300
-                             font-medium
-                             rounded-lg
-                             text-sm
-                             px-5 py-2.5
-                             text-center
-                             mr-2
-                             dark:border-red-500
-                             dark:text-red-500
-                             dark:hover:text-white
-                             dark:hover:bg-red-600
-                             dark:focus:ring-red-800'
-                onClick={login}>Login User</button>
-          </div>
-        </form>
-
-        <div className='relative'>
-          <h2 className='text-white'>User logged in:</h2>
-          <div className='border-2 p-4 m-2 rounded-lg'>
-          <div className='flow-root m-2 p-2 text-white'>
-                {user?.email}
-          </div>
-          <button 
-                type='submit'
-                className=' text-red-700 
-                             hover:text-white border 
-                             border-red-700 
-                             hover:bg-red-800 
-                             focus:ring-4 
-                             focus:outline-none 
-                             focus:ring-red-300
-                             font-medium
-                             rounded-lg
-                             text-sm
-                             px-5 py-2.5
-                             text-center
-                             mr-2
-                             dark:border-red-500
-                             dark:text-red-500
-                             dark:hover:text-white
-                             dark:hover:bg-red-600
-                             dark:focus:ring-red-800'
-                onClick={logout}>Logout</button>
-        </div>
-        </div>
       </div>
     </div>
   )

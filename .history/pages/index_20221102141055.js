@@ -183,9 +183,9 @@ export default function Home() {
         </form>
 
         <div className='relative'>
-          <h2 className='text-white'>User logged in:</h2>
+          <h2>User logged in:</h2>
           <div className='border-2 p-4 m-2 rounded-lg'>
-          <div className='flow-root m-2 p-2 text-white'>
+          <div className='flow-root m-2 p-2'>
                 {user?.email}
           </div>
           <button 

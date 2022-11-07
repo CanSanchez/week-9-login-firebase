@@ -72,10 +72,10 @@ export default function Home() {
       <h3 className="text-3xl text-sky-400 font-bold underline absolute top-0 p-4">Welcome to the app</h3>
       <div className="grid grid-cols-3 gap-4">
         <form onSubmit={HandleSubmit}>
-          <h2 className='text-white'>Register</h2>
-          <div className='border-2 p-4 m-2 rounded-lg'>
+          <h2>Register</h2>
+          <div className='border-2 p-4 m-2 rounded-lg bg-blue'>
             <div className='pb-4'>
-              <label className='text-white'>Email</label>
+              <label>Email</label>
               <input
                 placeholder='Email...'
                 onChange={(event) => {
@@ -83,7 +83,7 @@ export default function Home() {
                 }}
                 className='flow-root m-2 p-2'
               />
-               <label className='text-white'>Password</label>
+               <label>Password</label>
               <input
                 placeholder='Password...'
                 onChange={(event) => {
@@ -138,10 +138,10 @@ export default function Home() {
         </form>
 {/* Login Form */}
         <form onSubmit={HandleSubmit}>
-          <h2 className='text-white'>Login</h2>
+          <h2>Login</h2>
           <div className='border-2 p-4 m-2 rounded-lg'>
             <div className='pb-4'>
-              <label className='text-white'>Email</label>
+              <label>Email</label>
               <input 
                 placeholder='Email'
                 onChange={(event) => {
@@ -149,7 +149,7 @@ export default function Home() {
                 }}
                 className='flow-root m-2 p-2'
               />
-              <label className='text-white'>Password</label>
+              <label>Password</label>
               <input 
                 placeholder='Password'
                 onChange={(event) => {
@@ -183,9 +183,9 @@ export default function Home() {
         </form>
 
         <div className='relative'>
-          <h2 className='text-white'>User logged in:</h2>
+          <h2>User logged in:</h2>
           <div className='border-2 p-4 m-2 rounded-lg'>
-          <div className='flow-root m-2 p-2 text-white'>
+          <div className='flow-root m-2 p-2'>
                 {user?.email}
           </div>
           <button 
